@@ -4,7 +4,7 @@ body {
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: top;
-    background-attachment: scroll;
+    background-attachment: fixed;
     color: #eee;
     background-color: #000;
     font-family: "Cabin", "Open Sans", Helvetica, sans-serif;
@@ -58,7 +58,12 @@ a:hover, input[type="button"]:hover {
 }
 [container] [form] > input:first-child {
     color: #c2e93c;
-    background: #000;
+    background: url(bg.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: scroll;
+    background-color: #000;
     border: thin solid #c2e93c;
     border-right: none !important;
     font-size: 1.5em;
@@ -131,4 +136,22 @@ a:hover, input[type="button"]:hover {
 }
 [stats] > div > span:last-child {
     font-size: 1em;
+}
+
+table {
+}
+table td, table th {
+    padding: 2px;
+    text-align: left;
+}
+table thead, table th {
+    background: #fff1;
+    font-size: 0.9em;
+}
+table td {
+    font-family: monospace;
+}
+table td:nth-child(2),
+table td:nth-child(3) {
+    text-align: right;
 }
