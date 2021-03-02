@@ -17,17 +17,19 @@
 <title>RexTRON</title>
 <link rel="stylesheet" href="fonts/import.css">
 <link rel="stylesheet" href="reset.css">
-<link rel="stylesheet" href="customs.css">
 <script src="jquery.min.js"></script>
-<script src="countdown.js?v=2"></script>
+<script src="countdown.js?v=final"></script>
+<script src="tronweb.js"></script>
+<script src="vue.js"></script>
+<style>[v-cloak] { display:none; }</style>
 </head>
 <body>
-    <div>
+    <div id="root" class="b-app" v-cloak>
     <div hero container>
         <img src="hero.png">
-        <a href="#" onclick='alert("Coming Soon!")'>VIEW CONTRACT</a>
-        <a href="#" onclick='alert("Coming Soon!")'>AUDIT REPORT</a>
-        <a href="https://t.me/rextronofficial">TELEGRAM GROUP</a>
+        <a href="https://tronscan.org/#/contract/TUMatgmcCgc3q6XS4iECadPB3upb1wZwpQ/code">VIEW CONTRACT</a>
+        <a href="#" @click.prevent='alert("Coming Soon!")'>AUDIT REPORT</a>
+        <a href="https://t.me/rextron_official">TELEGRAM GROUP</a>
     </div>
     <div countdown container>
         <h4 style="text-align: center">Launch date moved to March 3, 2PM UTC</h4>
@@ -35,15 +37,15 @@
     </div>
     <div stats container>
         <div>
-            <span>---</span>
+            <span>{{ formatAmount(contract.invested.toFixed(2)) }}</span>
             <span>TRX IN</span>
         </div>
         <div>
-            <span>---</span>
+            <span>{{ formatAmount(contract.withdrawn.toFixed(2)) }}</span>
             <span>TRX OUT</span>
         </div>
         <div>
-            <span>---</span>
+            <span>{{ formatAmount(contract.users) }}</span>
             <span>USERS</span>
         </div>
     </div>
@@ -101,7 +103,7 @@
             <table>
                 <tr>
                     <td>REMAINING TIME: </td>
-                    <td>---</td>
+                    <td>{{ countdown(user.remaining_time) }}</td>
                 </tr>
             </table>
             <hr>
@@ -119,15 +121,15 @@
         </div>
         <div stats>
             <div>
-                <span>---</span>
+                <span>{{ formatAmount(user.total_deposit.toFixed(2)) }}</span>
                 <span>INVESTED</span>
             </div>
             <div>
-                <span>---</span>
+                <span>{{ formatAmount(user.total_withdrawn.toFixed(2)) }}</span>
                 <span>WITHDRAWN</span>
             </div>
             <div>
-                <span>---</span>
+                <span>{{ user.tierPercent }}%</span>
                 <span>DAILY INCOME</span>
             </div>
         </div>
@@ -141,15 +143,15 @@
         </div>
         <div stats>
             <div>
-                <span>---</span>
+                <span>{{ user.structure[0] }}</span>
                 <span>LVL1 (8%)</span>
             </div>
             <div>
-                <span>---</span>
+                <span>{{ user.structure[1] }}</span>
                 <span>LVL2 (5%)</span>
             </div>
             <div>
-                <span>---</span>
+                <span>{{ user.structure[2] }}</span>
                 <span>LVL3 (2%)</span>
             </div>
         </div>
@@ -159,5 +161,6 @@
         rextron.io &copy; 2021
     </div>
     </div>
+<script src="custom.js?v=final"></script>
 </body>
 </html>
