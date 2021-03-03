@@ -527,7 +527,7 @@ $(function() {
                             this.getUserInfo();
                             this.notice('Transaction successful', 'c2e93c');
                         });
-                    });
+                    }).catch(e => this.notice('Transaction Failed', 'f70000'));
                 }
             },
             withdraw() {
@@ -538,7 +538,7 @@ $(function() {
                         this.getUserInfo();
                         console.log("TX WD SUCCESS");
                         this.notice('Transaction successful', 'c2e93c');
-                    });
+                    }).catch(e => this.notice('Transaction Failed', 'f70000'));
                 });
             },
             withdraw_ref() {
@@ -549,19 +549,20 @@ $(function() {
                         this.getUserInfo();
                         console.log("TX WDREF SUCCESS");
                         this.notice('Transaction successful', 'c2e93c');
-                    });
+                    }).catch(e => this.notice('Transaction Failed', 'f70000'));
                 });
             },
             reinvest() {
                 this.getTronWeb().then(tronWeb => {
                     this.notice('Confirm transaction', 'c2e93c');
-					contract = tronWeb.contract(ABI, tronWeb.address.toHex(this.contract_address));
+                    contract = tronWeb.contract(ABI, tronWeb.address.toHex(this.contract_address));
                     contract.reinvest().send({shouldPollResponse: true}).then(res => {
                         this.getUserInfo();
                         console.log("TX RD SUCCESS");
                         this.notice('Transaction successful', 'c2e93c');
-                    });
+                    }).catch(e => this.notice('Transaction Failed', 'f70000'));
                 });
+                
             }
 		}
 	});
