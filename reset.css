@@ -31,6 +31,9 @@ hr { border-top: thin solid #000; border-bottom: thin solid #07282f; border-left
 a:hover, input[type="button"]:hover {
     opacity: 0.8;
 }
+a {
+    color: #d70000;
+}
 [padded] {
     padding-left: 16px;
     border-left: thin solid #07282f;

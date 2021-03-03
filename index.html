@@ -16,7 +16,7 @@
 <meta name="description" content="TRON High-yield Investment Platform | Get 300% in 15 Days | 20% Daily | No Limits | 8% Direct Referral | 5% & 2% Sub-referral">
 <title>RexTRON</title>
 <link rel="stylesheet" href="fonts/import.css">
-<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="reset.css?v=final">
 <script src="jquery.min.js"></script>
 <script src="countdown.js?v=final"></script>
 <script src="tronweb.js"></script>
@@ -31,10 +31,10 @@
         <a href="#" @click.prevent='alert("Coming Soon!")'>AUDIT REPORT</a>
         <a href="https://t.me/rextronofficial">TELEGRAM GROUP</a>
     </div>
-    <div countdown container>
+    <!--div countdown container>
         <h4 style="text-align: center">Launch date moved to March 3, 2PM UTC</h4>
         <h3 id="countdown" style="text-align: center"></h3>
-    </div>
+    </div-->
     <div stats container>
         <div>
             <span>{{ formatAmount(contract.invested.toFixed(2)) }}</span>
@@ -95,6 +95,8 @@
                 <input type="number" placeholder="100 TRX" value="100" step="100" min="100" v-model.number="calc.amount" @change="calc.amount = calc.amount < 100 ? 100 : calc.amount"><input type="button" value="INVEST" @click.prevent="deposit(calc.amount)">
             </div>
             <small>TX fee: 10-25 <span trx>TRX<span></small>
+            <br>
+            <small><a href="#faqs">Transaction failed (?)</a></small>
         </div>
     </div>
     <div out container>
@@ -110,6 +112,9 @@
             <h3>AVAILABLE INCOME</h3>
             <div form>
                 <input type="number" placeholder="..." v-model.number="user.for_withdraw" disabled><input type="button" value="WITHDRAW" @click.prevent="withdraw()">
+            </div>
+            <div form>
+                <input type="button" value="REINVEST" @click.prevent="reinvest()">
             </div>
             <small>TX fee: 5-10 <span trx>TRX<span></small>
             <hr>
@@ -154,6 +159,31 @@
                 <span>{{ user.structure[2] }}</span>
                 <span>LVL3 (2%)</span>
             </div>
+        </div>
+    </div>
+    <div container id="faqs">
+        <h1>FAQs</h1>
+        <div padded>
+            <h2>How can I invest?</h2>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">Download <a href='https://klever.io/'>Klever Wallet</a> [<a href='https://play.google.com/store/apps/details?id=cash.klever.blockchain.wallet&hl=en&gl=US'>Android App</a>] [<a href='https://apps.apple.com/us/app/klever-crypto-bitcoin-wallet/id1525584688'>iOS App</a>], add funds, use the dApp browser and enter our dApp website (http://rextron.io).</h5>
+            <hr>
+            <h2>Why transaction failed when I invest?</h2>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">Due to TRON(TRX) going up in prices, transaction fees are also going higher. <u>TronLink mobile</u> only allows TX fees up to 20 TRX. We recommend you use <a href='https://klever.io/'>Klever Wallet</a> [<a href='https://play.google.com/store/apps/details?id=cash.klever.blockchain.wallet&hl=en&gl=US'>Android App</a>] [<a href='https://apps.apple.com/us/app/klever-crypto-bitcoin-wallet/id1525584688'>iOS App</a>] and import your Tronlink accounts to Klever (using private key).</h5>
+            <hr>
+            <h2>Are there limits?</h2>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">No. We have no limits on investments and withdrawals.</h5>
+            <hr>
+            <h2>When will audit be released?</h2>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">We have no exact date but it is already being processed by our audit company. We will release a statement on our Telegram Group Chat once it is released. Rest assured our code has no backdoors whatsoever, already tested multiple times.</h5>
+            <hr>
+            <h2>What is the distribution of funds?</h2>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">95% User Distribution</h5>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">5% Development, Platform &amp; Marketing fee</h5>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">
+            <a href="https://tronscan.org/#/contract/TUMatgmcCgc3q6XS4iECadPB3upb1wZwpQ/code">View Smart Contract Source Code</a>
+            <br>
+            TUMatgmcCgc3q6XS4iECadPB3upb1wZwpQ
+            </h5>
         </div>
     </div>
     <div container style="text-align: center">
