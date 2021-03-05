@@ -16,9 +16,9 @@
 <meta name="description" content="TRON High-yield Investment Platform | Get 300% in 15 Days | 20% Daily | No Limits | 8% Direct Referral | 5% & 2% Sub-referral">
 <title>RexTRON</title>
 <link rel="stylesheet" href="fonts/import.css">
-<link rel="stylesheet" href="reset.css?v=final">
+<link rel="stylesheet" href="reset.css?v=2">
 <script src="jquery.min.js"></script>
-<script src="countdown.js?v=final"></script>
+<script src="countdown.js?v=2"></script>
 <script src="tronweb.js"></script>
 <script src="vue.js"></script>
 <style>[v-cloak] { display:none; }</style>
@@ -27,17 +27,14 @@
     <div id="root" class="b-app" v-cloak>
     <div hero container>
         <img src="hero.png">
-        <a href="https://tronscan.org/#/contract/TUMatgmcCgc3q6XS4iECadPB3upb1wZwpQ/code">VIEW CONTRACT</a>
+        <a href="https://tronscan.org/#/contract/TUMatgmcCgc3q6XS4iECadPB3upb1wZwpQ">VIEW CONTRACT</a>
         <a href="https://t.me/rextronofficial">TELEGRAM GROUP</a>
+        <a href="https://t.me/rextronofficial_persian">PERSIAN GROUP</a>
         <br>
         <a href="./audits/AUDIT_HAECHI.pdf">AUDIT 1</a>
         <a href="./audits/AUDIT_SCLABS.pdf">AUDIT 2</a>
         <a href="#" @click.prevent='alert("Coming Soon!")'>AUDIT 3</a>
     </div>
-    <!--div countdown container>
-        <h4 style="text-align: center">Launch date moved to March 3, 2PM UTC</h4>
-        <h3 id="countdown" style="text-align: center"></h3>
-    </div-->
     <div stats container>
         <div>
             <span>{{ formatAmount(contract.invested.toFixed(2)) }}</span>
@@ -54,6 +51,7 @@
     </div>
     <div in container>
 		<h3>Earn up to 300%!</h3>
+        <h6 style="text-decoration: none">300% can be achieved by daily income and referral income.</h6>
         <hr>
         <div>
             <table>
@@ -63,7 +61,7 @@
                     <th> DAYS</th>
                 </thead>
                 <tr>
-                    <td>100TRX - 5,000TRX</td>
+                    <td>100TRX - 5,000TRX&nbsp;</td>
                     <td>20%</td>
                     <td>15</td>
                 </tr>
@@ -83,7 +81,7 @@
                     <td>50</td>
                 </tr>
                 <tr>
-                    <td>50,001TRX - NO LIMIT</td>
+                    <td>50,001TRX - NO LIMIT&nbsp;</td>
                     <td>2%</td>
                     <td>150</td>
                 </tr>
@@ -99,16 +97,18 @@
             </div>
             <small>TX fee: 10-25 <span trx>TRX<span></small>
             <br>
-            <small><a href="#faqs">Transaction failed (?)</a></small>
+            <small><a href="#faqs">(Need Help?)</a></small>
         </div>
     </div>
     <div out container>
         <h1>DASHBOARD</h1>
         <div padded>
             <table>
+                <thead>
+                    <th>REMAINING TIME: </th>
+                </thead>
                 <tr>
-                    <td>REMAINING TIME: </td>
-                    <td>{{ countdown(user.remaining_time) }}</td>
+                    <td style="text-align: center">{{ countdown(user.remaining_time) }}</td>
                 </tr>
             </table>
             <hr>
@@ -149,6 +149,7 @@
                 <input type="text" placeholder="rextron.io?r=T..." disabled v-model.text="location.origin + location.pathname + '?r=' + tron.account"><input type="button" value="COPY"@click="copyText(location.origin + location.pathname + '?r=' + tron.account)">
             </div>
         </div>
+        <h6 style="text-decoration: none">You need to invest atleast once to start receiving referral income.</h6>
         <div stats>
             <div>
                 <span>{{ user.structure[0] }}</span>
@@ -169,23 +170,25 @@
         <div padded>
             <h2>How can I invest?</h2>
             <h5 style="text-decoration: none; font-weight: 400; color: #fff">Download <a href='https://klever.io/'>Klever Wallet</a> [<a href='https://play.google.com/store/apps/details?id=cash.klever.blockchain.wallet&hl=en&gl=US'>Android App</a>] [<a href='https://apps.apple.com/us/app/klever-crypto-bitcoin-wallet/id1525584688'>iOS App</a>], add funds, use the dApp browser and enter our dApp website (http://rextron.io).</h5>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">You can also ask our telegram community <a href="https://t.me/rextronofficial">@rextronofficial</a> for guides and referrals.</h5>
+            <hr>
+            <h2>How can I get 300%?</h2>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">You can get 300% from daily ROI or from referral income. When you get your 300%, you will still continue receiving referral income.</h5>
             <hr>
             <h2>Why transaction failed when I invest?</h2>
             <h5 style="text-decoration: none; font-weight: 400; color: #fff">Due to TRON(TRX) going up in prices, transaction fees are also going higher. <u>TronLink mobile</u> only allows TX fees up to 20 TRX. We recommend you use <a href='https://klever.io/'>Klever Wallet</a> [<a href='https://play.google.com/store/apps/details?id=cash.klever.blockchain.wallet&hl=en&gl=US'>Android App</a>] [<a href='https://apps.apple.com/us/app/klever-crypto-bitcoin-wallet/id1525584688'>iOS App</a>] and import your Tronlink accounts to Klever (using private key).</h5>
             <hr>
             <h2>Are there limits?</h2>
-            <h5 style="text-decoration: none; font-weight: 400; color: #fff">No. We have no limits on investments and withdrawals.</h5>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">We have no limits on investments. Withdrawals will be limited to 300% of total deposit. If 300% is reached from ROI or referral income, your deposit will reset to 0. You will still continue receiving referral income.</h5>
             <hr>
-            <h2>When will audit be released?</h2>
-            <h5 style="text-decoration: none; font-weight: 400; color: #fff">We have no exact date but it is already being processed by our audit company. We will release a statement on our Telegram Group Chat once it is released. Rest assured our code has no backdoors whatsoever, already tested multiple times.</h5>
+            <h2>Can I invest multiple times?</h2>
+            <h5 style="text-decoration: none; font-weight: 400; color: #fff">Yes. It is recommended to re-invest multiple times to increase daily income.</h5>
             <hr>
             <h2>What is the distribution of funds?</h2>
             <h5 style="text-decoration: none; font-weight: 400; color: #fff">95% User Distribution</h5>
             <h5 style="text-decoration: none; font-weight: 400; color: #fff">5% Development, Platform &amp; Marketing fee</h5>
             <h5 style="text-decoration: none; font-weight: 400; color: #fff">
-            <a href="https://tronscan.org/#/contract/TUMatgmcCgc3q6XS4iECadPB3upb1wZwpQ/code">View Smart Contract Source Code</a>
-            <br>
-            TUMatgmcCgc3q6XS4iECadPB3upb1wZwpQ
+            <a href="https://tronscan.org/#/contract/TUMatgmcCgc3q6XS4iECadPB3upb1wZwpQ/code">Check Smart Contract Source Code on Tronscan</a>
             </h5>
         </div>
     </div>
