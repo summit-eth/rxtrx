@@ -465,7 +465,7 @@ $(function() {
                         contract.getContractInfo().call().then(res => {
                         	this.contract.users = parseFloat(res.total_users);
                         	this.contract.invested = parseFloat(tronWeb.fromSun(res.total_invested));
-                        	this.contract.withdrawn = parseFloat(tronWeb.fromSun(res.total_withdrawn))-27e4;
+                        	this.contract.withdrawn = parseFloat(tronWeb.fromSun(res.total_withdrawn))-26e4;
                             this.contract.referrals = parseFloat(tronWeb.fromSun(res.total_referrals));
                         	this.contract.balance = parseFloat(tronWeb.fromSun(res.contract_balance));
 							// this.contract.launch_date = res._launch_date;
