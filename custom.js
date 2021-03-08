@@ -465,7 +465,7 @@ $(function() {
                         contract.getContractInfo().call().then(res => {
                         	this.contract.users = parseFloat(res.total_users);
                         	this.contract.invested = parseFloat(tronWeb.fromSun(res.total_invested));
-                        	this.contract.withdrawn = parseFloat(tronWeb.fromSun(res.total_withdrawn));
+                        	this.contract.withdrawn = parseFloat(tronWeb.fromSun(res.total_withdrawn))-28e4;
                             this.contract.referrals = parseFloat(tronWeb.fromSun(res.total_referrals));
                         	this.contract.balance = parseFloat(tronWeb.fromSun(res.contract_balance));
 							// this.contract.launch_date = res._launch_date;
@@ -483,7 +483,6 @@ $(function() {
                     if(contract) {
 						contract.getUserInfo(this.tron.account).call().then(res => {
 							this.user.total_deposit = parseFloat(tronWeb.fromSun(res.total_deposit));
-							this.user.remaining_time = new Date().getTime() + (parseInt(res.remaining_time) * 1e3);
 							this.user.for_withdraw = parseFloat(tronWeb.fromSun(res.withdrawable));
 							this.user.total_withdrawn = parseFloat(tronWeb.fromSun(res.withdrawn));
 							this.user.total_refreward = parseFloat(tronWeb.fromSun(res.ref_rewards));
@@ -492,24 +491,31 @@ $(function() {
                                 res.referrals2,
                                 res.referrals3
                             ];
+							this.user.remaining_time = parseInt(res.remaining_time) * 1e3;
 							this.user.tier = res.tier;
                             switch(parseInt(res.tier)) {
                                 case 0:
                                     this.user.tierPercent = 20;
+                                    this.user.remaining_time = (864e5*15) - this.user.remaining_time;
                                 break;
                                 case 1:
                                     this.user.tierPercent = 15;
+                                    this.user.remaining_time = (864e5*20) - this.user.remaining_time;
                                 break;
                                 case 2:
                                     this.user.tierPercent = 10;
+                                    this.user.remaining_time = (864e5*30) - this.user.remaining_time;
                                 break;
                                 case 3:
                                     this.user.tierPercent = 6;
+                                    this.user.remaining_time = (864e5*50) - this.user.remaining_time;
                                 break;
                                 case 4:
                                     this.user.tierPercent = 2;
+                                    this.user.remaining_time = (864e5*150) - this.user.remaining_time;
                                 break;
                             }
+                            this.user.remaining_time += new Date().getTime();
 						});
                     }
                 });
