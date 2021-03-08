@@ -58,6 +58,8 @@ a {
     margin: 0px;
     padding: 0px;
     vertical-align: text-top;
+    border-radius: 0px !important;
+    opacity: 1 !important;
 }
 [container] [form] > input:first-child {
     color: #c2e93c;
@@ -70,7 +72,8 @@ a {
     border: thin solid #c2e93c;
     border-right: none !important;
     font-size: 1.5em;
-    width: 210px;
+    min-width: 170px;
+    width: calc(100% - 104px);
     height: 50px;
     padding-left: 16px;
     padding-right: 16px;
@@ -123,7 +126,7 @@ a {
     padding-top: 16px;
 }
 [stats] > div {
-    width: 32.5%;
+    width: 32.4%;
     display: inline-block;
 }
 [stats] > div > span {
@@ -133,7 +136,7 @@ a {
     color: #c2e93c;
 }
 [stats] > div > span:first-child {
-    font-size: 2em;
+    font-size: 1.7em;
     background: #07282f;
     border-radius: 7px;
 }
